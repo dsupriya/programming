@@ -1,0 +1,11 @@
+Takes string as input returns all sub-sequences
+eg. input - abc
+ouput - 8
+"" 
+c 
+b 
+bc 
+a 
+ac 
+ab 
+abc 
