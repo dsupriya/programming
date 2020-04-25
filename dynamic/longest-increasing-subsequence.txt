@@ -1,0 +1,6 @@
+longest-increasing-subsequence.txt
+input : 8 1 2 3 5
+output : 4
+
+input : 10 7 4 2 1
+output:1
