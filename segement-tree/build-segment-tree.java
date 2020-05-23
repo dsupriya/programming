@@ -11,7 +11,7 @@ public class HelloWorld{
             a[i]=sc.nextInt();
         int tree[] = new int[2*n];
         sumTree(a,tree,1,0,n-1);
-       //fillArray(tree);
+        updateTree(a,tree,1,0,n-1,10,2);
        for(int i=0;i<2*n;i++)
         System.out.print(tree[i]+" ");
     }
@@ -34,6 +34,31 @@ public class HelloWorld{
         int mid= (start+end)/2;
         sumTree(a,tree,node*2,start,mid);
         sumTree(a,tree,node*2+1,mid+1,end);
+        tree[node] = tree[node*2]+tree[node*2+1];
+        return;
+        
+        
+    }
+    
+    public static void updateTree(int []a, int []tree, int node, int start, int end,  int value, int index)
+    {
+        
+        if(start==end)
+        {
+            a[index]=value;
+            tree[node]=value;
+            return;
+        }
+        int mid =(start+end)/2;
+        if(mid>index)
+        {
+            updateTree(a,tree,node*2,start,mid-1,value,index);
+            
+        }
+        else
+        {
+            updateTree(a,tree,node*2+1,mid+1,end,value,index);
+        }
         tree[node] = tree[node*2]+tree[node*2+1];
         return;
         
