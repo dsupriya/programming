@@ -11,9 +11,14 @@ public class HelloWorld{
             a[i]=sc.nextInt();
         int tree[] = new int[2*n];
         sumTree(a,tree,1,0,n-1);
-        updateTree(a,tree,1,0,n-1,10,2);
+        //updateTree(a,tree,1,0,n-1,10,2);
        for(int i=0;i<2*n;i++)
-        System.out.print(tree[i]+" ");
+        {System.out.print(tree[i]+" ");}
+        System.out.println();
+       int ans=query(tree,1,0,n-1,0,2);
+        System.out.println("1 "+ans);
+        ans=query(tree,1,0,n-1,1,1);
+         System.out.println("2 "+ans);
     }
     
     public static void fillArray(int [] a)
@@ -28,7 +33,7 @@ public class HelloWorld{
         if(start==end)
         {
             tree[node] =  a[start];
-            System.out.println(a[start]  + " "+node);
+            //System.out.println(a[start]  + " "+node);
             return;
         }
         int mid= (start+end)/2;
@@ -64,4 +69,24 @@ public class HelloWorld{
         
         
     }
+    public static int query(int [] tree,int node, int start,int end, int left, int right)
+    {
+       //completely outside
+       if(right<start || left >end)
+        return 0;
+        
+        //complety within range
+        if(start >=left &&  end <= right)
+            return tree[node];
+        
+        else
+        {
+            int mid = (start + end)/2;
+            int ans1 = query(tree,node*2,start,mid,left,right);
+            int ans2= query(tree,node*2+1,mid+1,end,left,right);
+            return ans1+ans2;
+        }
+        
+    }
+    
 }
