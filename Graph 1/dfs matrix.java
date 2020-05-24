@@ -15,7 +15,12 @@ public class HelloWorld{
             graph[e][s] = 1;
         }
         boolean visited[] = new boolean[n];
-        DFS(graph,visited,1);
+        for(int i=0;i<n;i++)
+        {
+            if(visited[i]==false)
+                DFS(graph,visited,i);
+        }
+        
      }
      public static void DFS(int [][]graph, boolean []visited, int start)
     {
