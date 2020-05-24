@@ -27,17 +27,20 @@ public class Solution {
         LinkedList <Integer> l = new  LinkedList<Integer>();
         int n = visited.length;
         l.add(start);
+	visited[start]=true;
         Iterator itr = l.iterator();
         while(itr.hasNext())
         {
-            int t = l.remove(0);
-            if(visited[t]==false)
-            	System.out.print(t+" ");
-            visited[t] = true;
+           int t = l.remove(0);
+           System.out.print(t+" ");
+           
             for(int i =0;i<n;i++)
             {
                 if(graph[t][i]==1 && visited[i]==false)
-                    l.add(i);
+		{
+			l.add(i);
+			visited[i]=true;
+		}
             }
         }
     }
