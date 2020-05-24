@@ -15,9 +15,11 @@ public class Solution {
             graph[s][f] = 1;
         }
         boolean []visited = new boolean [v];
-        for(int i=0;i<v;i++)
-        	BFS(graph,visited,i);
-        
+        for(int i=0;i<v;i++){
+            if(visited[i]==false)
+                BFS(graph,visited,i);
+        }
+        	
 		
 	}
     public static void BFS(int [][]graph, boolean [] visited, int start)
