@@ -36,7 +36,7 @@ public class Main {
             {
                 int index = sc.nextInt();
                 int value = sc.nextInt();
-               	updateTree(a,tree,1,0,n-1,index,value);
+               	updateTree(a,tree,1,0,n-1,index-1,value);
                 
                 
                 
@@ -80,30 +80,7 @@ public class Main {
             return;
             
         }
-    }/*public static void updateTree(int []a, int []tree, int node, int start, int end,  int value, int index)
-    {
-        
-        if(start==end)
-        {
-            a[index]=value;
-            tree[node]=value;
-            return;
-        }
-        int mid =(start+end)/2;
-        if(mid>index)
-        {
-            updateTree(a,tree,node*2,start,mid-1,value,index);
-            
-        }
-        else
-        {
-            updateTree(a,tree,node*2+1,mid+1,end,value,index);
-        }
-        tree[node] = tree[node*2]+tree[node*2+1];
-        return;
-        
-        
-    }*/
+    }
     public static void updateTree(int []a, int []tree, int node, int start, int end, int index, int value)
     {
         if(start == end)
@@ -115,13 +92,13 @@ public class Main {
         else
         {
             int mid = (start+end)/2;
-            if(mid>index)
+            if(mid<index)
             {
-                updateTree(a,tree,node*2,start,mid,index,value);
+                updateTree(a,tree,node*2+1,mid+1,end,index,value);
             }
             else
             {
-                updateTree(a,tree,node*2+1,mid+1,end,index,value);
+                updateTree(a,tree,node*2,start,mid,index,value);
             }
             tree[node] =Math.min(tree[node*2],tree[node*2+1]);
             return;
