@@ -28,4 +28,24 @@ public class HelloWorld{
         
          
      }
+     public static void takeAdjListAsGraph()
+     {
+          Scanner sc = new Scanner(System.in);
+          //no of vertex
+          int n = sc.nextInt();
+          //no of edges
+          int e = sc.nextInt();
+          ArrayList <ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
+          for(int i=0;i<n;i++)
+               list.add(i, new ArrayList<Integer>());
+          while(e>0)
+          {
+               e--;
+               int t1 = sc.nextInt();
+               int t2 = sc.nextInt();
+               list.get(t1).add(t2);
+               list.get(t2).add(t1);
+          }
+          System.out.println(list);
+     }
 }
