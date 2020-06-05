@@ -1,2 +1,2 @@
 # coading-ninja
-This repository contains, Coding Ninja Problems and solutions.
+Repository containing solutions for coding-ninja competitive programming courseions.
