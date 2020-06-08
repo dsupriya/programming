@@ -1,6 +1,6 @@
 
 import java.util.*;
-public class solution {
+ class solution {
 	
 	int solve(String[] board , int n, int m)
 	{
@@ -92,6 +92,7 @@ public class solution {
                 {
                     visited[cur_row][cur_col]=true;
                     String temp = ""+(char)(cur_row)+(char)(cur_col);
+                    System.out.println(temp);
                 	path.add(temp);
                 	ans = findLoop(graph,visited,path,c);
                 	if(ans == true )
@@ -109,3 +110,29 @@ public class solution {
             return false;
     }
 }
+public class runner {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int N,M,i;
+		
+		N = scan.nextInt();
+		M = scan.nextInt();
+		
+		String[] board = new String[N];
+		
+		for(i = 0; i < N; i++){
+			
+			board[i] = scan.next();
+			
+		}
+		System.out.println(new solution().solve(board,N,M));
+
+	}
+
+}
+
+
+
