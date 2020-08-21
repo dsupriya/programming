@@ -1,5 +1,5 @@
 Distinct Query Problem
-Send Feedback
+
 Given a sequence of n numbers a1, a2, ..., an and a number of d-queries. A d-query is a pair (i, j) (1 ≤ i ≤ j ≤ n). For each d-query (i, j), you have to return the number of distinct elements in the subsequence ai, ai+1, ..., aj.
 Input
 Line 1: n (1 ≤ n ≤ 30000).
