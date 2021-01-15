@@ -17,7 +17,7 @@ out put:
 0 5 1
 Ans 15
 Query can be - give the sum of between incides  x and y
-better than segment tree
+
 
 */
 import java.util.*;
