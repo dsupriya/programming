@@ -1,2 +1,2 @@
-# coding-ninja
-Repository containing solutions for coding-ninja competitive programming course.
+# coding
+Repository containing solutions for  competitive programming problems
